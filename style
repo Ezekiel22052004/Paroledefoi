@@ -3,7 +3,7 @@
    - Palette bleu clair, look premium
    - Nav 100% responsive (sans débordement)
    - Cartes glass + ombres profondes
-   - Hero avec image: images/accueil.jpg
+   - Hero avec image: accueil.jpg
    - Page Contact avec dégradé élégant
    ========================================================= */
 
@@ -268,3 +268,4 @@ footer{
 @media (max-width:560px){
   .iconbtn{ width:46px; height:46px; font-size:1.15rem }
 }
+
