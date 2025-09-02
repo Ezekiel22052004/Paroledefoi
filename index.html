@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAROLE DE FOI — Hébreux 11:1</title>
+  <meta name="description" content="PAROLE DE FOI — Hébreux 11:1 : La foi est une ferme assurance des choses qu'on espère, une démonstration de celles qu'on ne voit pas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ====== Thème (bleu clair, pro) ====== */
+    :root{
+      --bg:#eaf4ff;         /* bleu très clair */
+      --bg-soft:#f7fbff;    /* variante très claire */
+      --primary:#2aa8ff;    /* bleu clair */
+      --accent:#7cc6ff;     /* bleu d'accent */
+      --ink:#0f1226;        /* texte */
+      --muted:#5b6b84;      /* texte secondaire */
+      --card:#ffffff;       /* cartes blanches */
+      --radius:18px;
+      --shadow: 0 14px 34px rgba(20,118,255,.12);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1100px 700px at 80% -10%, rgba(42,168,255,.08), transparent 60%),
+                         radial-gradient(900px 600px at -10% 20%, rgba(20,118,255,.06), transparent 60%),
+                         var(--bg); color:var(--ink);
+               font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; font-size:16.5px}
+    a{color:#0b2f6e;text-decoration:none}
+    a:hover{ text-decoration:underline; text-underline-offset:3px }
+    img{max-width:100%;display:block}
+    .container{width:min(1100px,92%);margin-inline:auto}
+
+    /* ====== Boutons ====== */
+    .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.12rem;border-radius:999px;font-weight:600;border:1px solid #d9e7ff;background:#fff;color:#0b2f6e;box-shadow:var(--shadow);transition:.2s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--primary),#6dbbff);color:#fff;border-color:#cfe2ff;box-shadow:0 10px 26px rgba(42,168,255,.28)}
+
+    /* ====== Header / Nav ====== */
+    header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid #e6eef7;backdrop-filter:saturate(1.1)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+    .brand{display:flex;align-items:center;gap:.7rem}
+    .brand img{width:48px;height:48px;object-fit:contain}
+    .brand strong{font-weight:700; letter-spacing:.3px; font-size:clamp(1.4rem, 3.2vw, 2.2rem)}
+    .navlinks{display:flex;gap:1.2rem;align-items:center}
+    .navlinks a{font-weight:600;color:#1a2a44}
+
+    /* ====== Sections ====== */
+    .section{padding:64px 0}
+    .section h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin:0 0 1rem}
+    .card{background:var(--card); border:1px solid #e6eef7; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .grid{display:grid;gap:1rem}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 900px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+
+    /* ====== HERO Accueil ====== */
+    :root{ --hero-url: url('images/accueil.jpg'); }
+    #view-home{
+      position:relative; 
+      background-image:url('images/accueil.jpg') !important;
+      background-size:cover; background-position:center; 
+      min-height:70vh; display:grid; align-items:center;
+    }
+    #view-home::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,24,50,.30), rgba(10,24,50,.10)); }
+    #view-home > .container{ position:relative; z-index:1; }
+    #view-home h1{ font-weight:800; color:#0b2f6e; font-size: clamp(2.4rem, 5.8vw, 4rem); margin:.6rem 0 0 }
+    .pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid #d9e7ff;border-radius:999px;padding:.35rem .7rem;background:#ffffff}
+
+    /* ====== Router visibility ====== */
+    [data-view]{display:none}
+    [data-view].active{display:block}
+
+    /* ====== Actions sous une dévotion (Like / Commenter) ====== */
+    .actions{display:flex;gap:.6rem;align-items:center;margin-top:.8rem}
+    .iconbtn{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:42px;height:42px;border-radius:999px;
+      border:1px solid #d9e7ff;background:#fff;color:#0b2f6e;
+      box-shadow:var(--shadow);cursor:pointer;font-size:1.05rem
+    }
+    .iconbtn[aria-pressed="true"]{
+      background:linear-gradient(135deg,var(--primary),#6dbbff);
+      color:#fff;border-color:#cfe2ff
+    }
+
+    /* ====== Footer ====== */
+    footer{padding:40px 0;border-top:1px solid #e6eef7;color:var(--muted)}
+
+    /* ====== Icônes réseaux (avant le texte du lien) ====== */
+    a[href*="facebook.com"]::before,
+    a[href*="youtube.com"]::before{
+      content:"";display:inline-block;width:1.05em;height:1.05em;margin-right:.45rem;vertical-align:-2px;background:currentColor;}
+    /* Facebook */
+    a[href*="facebook.com"]::before{
+      -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.3V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/></svg>') no-repeat center / contain;
+              mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.3V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12h2.5l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/></svg>') no-repeat center / contain;
+    }
+    /* YouTube */
+    a[href*="youtube.com"]::before{
+      -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 12s0-3-.4-4.3a3 3 0 0 0-2.1-2.1C18.1 5 12 5 12 5S5.9 5 3.5 5.6a3 3 0 0 0-2.1 2.1C1 9 1 12 1 12s0 3 .4 4.3a3 3 0 0 0 2.1 2.1C5.9 19 12 19 12 19s6.1 0 8.5-.6a3 3 0 0 0 2.1-2.1C23 15 23 12 23 12z"/><polygon points="10,15 16,12 10,9"/></svg>') no-repeat center / contain;
+              mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 12s0-3-.4-4.3a3 3 0 0 0-2.1-2.1C18.1 5 12 5 12 5S5.9 5 3.5 5.6a3 3 0 0 0 2.1-2.1C1 9 1 12 1 12s0 3 .4 4.3a3 3 0 0 0 2.1 2.1C5.9 19 12 19 12 19s6.1 0 8.5-.6a3 3 0 0 0 2.1-2.1C23 15 23 12 23 12z"/><polygon points="10,15 16,12 10,9"/></svg>') no-repeat center / contain;
+    }
+  </style>
+</head>
+<body>
+  <!-- Bandeau contact global -->
+  <div style="background:#fff;border-bottom:1px solid #e9eef6;color:#355;">
+    <div class="container" style="display:flex;gap:1rem;align-items:center;justify-content:center;padding:.55rem .8rem;flex-wrap:wrap">
+      <span>Tel: <a href="tel:+22892732005" aria-label="Téléphone">+228 92 73 20 05</a></span>
+      <span>•</span>
+      <span>Email: <a href="mailto:paroledfoi@gmail.com" aria-label="Email">paroledfoi@gmail.com</a></span>
+      <span>•</span>
+      <a href="https://www.facebook.com/share/p/1BK3TvjusV/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+      <span>•</span>
+      <a href="https://youtube.com/@paroledefoi8956" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav">
+      <a href="#/" class="brand" aria-label="Accueil PAROLE DE FOI">
+        <img src="images/logo.png" alt="Logo PAROLE DE FOI"/>
+        <strong>PAROLE DE FOI</strong>
+      </a>
+      <nav class="navlinks" aria-label="Navigation principale">
+        <a href="#/">Accueil</a>
+        <a href="#/apropos">À propos</a>
+        <a href="#/enseignements">Enseignements</a>
+        <a href="#/contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Vues -->
+  <main>
+    <!-- Accueil -->
+    <section id="view-home" data-view class="section">
+      <div class="container">
+        <!-- (Accueil volontairement vide selon tes demandes) -->
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="view-apropos" data-view class="section">
+      <div class="container grid cols-2">
+        <div>
+          <h2>À propos</h2>
+          <p class="muted">Notre cœur : <strong>prière</strong>, <strong>exhortation</strong>, <strong>louange</strong>, <strong>adoration</strong>.</p>
+          <div class="grid cols-2">
+            <div class="card" style="padding:1rem"><strong>Prière</strong><p class="muted">Intercession et dépendance à Dieu.</p></div>
+            <div class="card" style="padding:1rem"><strong>Exhortation</strong><p class="muted">Encourager par la Parole.</p></div>
+            <div class="card" style="padding:1rem"><strong>Louange</strong><p class="muted">Exprimer notre reconnaissance.</p></div>
+            <div class="card" style="padding:1rem"><strong>Adoration</strong><p class="muted">Intimité avec Jésus.</p></div>
+          </div>
+        </div>
+        <div class="card" style="padding:1rem">
+          <h3 style="margin-top:0">PAROLE DE FOI</h3>
+          <ul class="muted" style="margin:.3rem 0 0; padding-left:1.1rem">
+            <li><strong>Téléphone</strong> : <a href="tel:+22892732005">+228 92 73 20 05</a></li>
+            <li><strong>Email</strong> : <a href="mailto:paroledfoi@gmail.com">paroledfoi@gmail.com</a></li>
+            <li><strong>YouTube</strong> : <a href="https://youtube.com/@paroledefoi8956" target="_blank" rel="noopener">@paroledefoi8956</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enseignements (Dévotions) -->
+    <section id="view-enseignements" data-view class="section">
+      <div class="container">
+        <h2>Enseignements — Dévotions matinales</h2>
+        <p class="muted">Clique sur une dévotion pour lire l'explication de la Parole du jour. Tu peux <strong>liker</strong> et <strong>commenter</strong>.</p>
+        <div id="devotions" class="grid cols-3"></div>
+      </div>
+    </section>
+
+    <!-- Détail d'une dévotion -->
+    <section id="view-devotion" data-view class="section">
+      <div class="container">
+        <a href="#/enseignements">← Retour aux dévotions</a>
+        <div id="devotionBox" class="card" style="padding:1rem;margin-top:1rem"></div>
+      </div>
+    </section>
+
+    <!-- Contact (simplifié) -->
+    <section id="view-contact" data-view class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Tu peux nous joindre directement :</p>
+        <div class="grid" style="margin-bottom:1rem">
+          <a class="btn primary" href="tel:+22892732005">Appeler</a>
+          <a class="btn" href="mailto:paroledfoi@gmail.com">Envoyer un email</a>
+          <a class="btn" href="https://www.facebook.com/share/p/1BK3TvjusV/" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn" href="https://youtube.com/@paroledefoi8956" target="_blank" rel="noopener">YouTube</a>
+        </div>
+        <div class="card" style="padding:1rem">
+          <p><strong>Téléphone</strong> : <a href="tel:+22892732005">+228 92 73 20 05</a></p>
+          <p><strong>Email</strong> : <a href="mailto:paroledfoi@gmail.com">paroledfoi@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+      <small>© <span id="year"></span> PAROLE DE FOI</small>
+      <small>
+        <a href="tel:+22892732005">+228 92 73 20 05</a> · 
+        <a href="mailto:paroledfoi@gmail.com">paroledfoi@gmail.com</a> · 
+        <a href="https://youtube.com/@paroledefoi8956" target="_blank" rel="noopener">YouTube</a>
+      </small>
+    </div>
+  </footer>
+
+  <script>
+    // --- Router ---
+    const views = {
+      home: document.getElementById('view-home'),
+      apropos: document.getElementById('view-apropos'),
+      enseignements: document.getElementById('view-enseignements'),
+      devotion: document.getElementById('view-devotion'),
+      contact: document.getElementById('view-contact'),
+    };
+    function setView(name){ Object.values(views).forEach(v=>v.classList.remove('active')); (views[name]||views.home).classList.add('active'); }
+
+    // ✅ Correction ici : on lit bien "page" et "id"
+    function parseRoute(){
+      const hash = location.hash.replace('#/','').trim();
+      if(!hash){ setView('home'); return; }
+      const [page, id] = hash.split('/');
+      if(page === 'devotion' && id){
+        renderDevotionDetail(id);
+        setView('devotion');
+      } else if(views[page]) {
+        setView(page);
+      } else {
+        setView('home');
+      }
+    }
+    window.addEventListener('hashchange', parseRoute); parseRoute();
+
+    // --- Données dévotions ---
+    const placeholderImg = 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e6f0ff"/><stop offset="100%" stop-color="#bcd6ff"/></linearGradient></defs><rect width="100%" height="100%" fill="url(#g)"/><text x="50%" y="55%" text-anchor="middle" font-family="Poppins" font-size="24" fill="#0b2f6e">Image de dévotion</text></svg>');
+
+    const DEVOTIONS = [
+      {
+        id:'romains-15-22-29',
+        date:'2025-09-01',
+        title:'Solidarité qui témoigne',
+        verse:'Romains 15:22-29',
+        img: 'images/devotion/img1.jpeg',
+        body: `Paul a souvent été empêché d’aller à Rome car il annonçait l’Évangile là où Christ n’était pas encore connu. Son cœur, pourtant, demeure tourné vers les frères.
+
+Avant de partir, il apporte à Jérusalem le soutien des Églises de Macédoine et d’Achaïe. La générosité devient alors un témoignage visible de l’amour de Dieu.
+
+Aimons concrètement : partager nos ressources, notre temps et notre écoute honore le Seigneur.
+
+🛐 Bonne méditation • 🟢 Belle journée
+#paroledefoi`
+      },
+      {
+        id:'hebreux-11-1',
+        date:'2025-09-02',
+        title:'Assurance des invisibles',
+        verse:'Hébreux 11:1',
+        img: 'images/devotion/img2.jpeg',
+        body: `La foi n’est pas un simple optimisme : elle s’appuie sur la fidélité de Dieu. Même si l’on ne voit pas encore, on avance parce que Dieu a parlé.
+
+Regarde moins à ce qui manque et davantage à Celui qui promet. La foi transforme l’attente en marche.
+
+Aujourd’hui, pose un acte concret de confiance.`
+      },
+      {
+        id:'psaume-27-1',
+        date:'2025-09-03',
+        title:'Lumière et sécurité',
+        verse:'Psaume 27:1',
+        img: 'images/devotion/img3.jpeg',
+        body: `« L’Éternel est ma lumière et mon salut : de qui aurais-je peur ? » La peur se dissipe quand la lumière de Dieu éclaire nos pas.
+
+Il ne promet pas une vie sans combats, mais Sa présence au milieu d’eux. La paix vient de ce qu’Il est avec nous.
+
+Respire profondément et proclame : le Seigneur est ma force.`
+      },
+      {
+        id:'philippiens-4-6-7',
+        date:'2025-09-04',
+        title:'La paix qui garde',
+        verse:'Philippiens 4:6-7',
+        img: 'images/devotion/img4.jpeg',
+        body: `L’inquiétude s’installe quand nous portons seuls ce que Dieu nous invite à déposer. La prière avec reconnaissance ouvre la porte à Sa paix.
+
+Cette paix ne nie pas les problèmes, mais elle garde nos cœurs et nos pensées en Christ.
+
+Aujourd’hui, transforme chaque souci en prière nommée.`
+      },
+      {
+        id:'esaie-41-10',
+        date:'2025-09-05',
+        title:'Ne crains pas, je suis avec toi',
+        verse:'Ésaïe 41:10',
+        img: 'images/devotion/img5.jpeg',
+        body: `Dieu ne minimise pas nos frayeurs ; Il les traverse avec nous. « Je te fortifie, je viens à ton secours. »
+
+La vraie force n’est pas l’absence de faiblesse, mais la présence du Dieu fidèle.
+
+Confie-Lui ce qui te dépasse : Sa main te soutient.`
+      },
+      {
+        id:'psaume-23-1-3',
+        date:'2025-09-06',
+        title:'Conduit et restauré',
+        verse:'Psaume 23:1-3',
+        img: 'images/devotion/img6.jpeg',
+        body: `Le Berger nous mène vers les eaux paisibles et restaure nos âmes. Il ne révèle pas toute la route, mais le prochain pas.
+
+Obéis à la lumière d’aujourd’hui : tu verras la suivante.
+
+Repose-toi en Sa bonté, même au milieu du bruit.`
+      },
+      {
+        id:'matthieu-11-28',
+        date:'2025-09-07',
+        title:'Repos pour les âmes',
+        verse:'Matthieu 11:28',
+        img: 'images/devotion/img7.jpeg',
+        body: `« Venez à moi, vous tous qui êtes fatigués… » Le repos n’est pas une méthode, c’est une personne : Jésus.
+
+Dépose les fardeaux invisibles : performances, comparaisons, culpabilité. Il porte avec toi.
+
+Apprends de son cœur doux et humble : tu trouveras le repos.`
+      },
+      {
+        id:'proverbes-3-5-6',
+        date:'2025-09-08',
+        title:'Tes voies rendues droites',
+        verse:'Proverbes 3:5-6',
+        img: 'images/devotion/img8.jpeg',
+        body: `Se confier de tout son cœur, c’est renoncer à tout maîtriser soi-même. Reconnais Dieu dans tes choix, grands ou petits.
+
+Il a mille chemins pour conduire un pas obéissant.
+
+Fais aujourd’hui le choix de Le consulter avant d’agir.`
+      },
+      {
+        id:'jacques-1-5',
+        date:'2025-09-09',
+        title:'La sagesse d’en haut',
+        verse:'Jacques 1:5',
+        img: 'images/devotion/img9.jpeg',
+        body: `Dieu donne la sagesse généreusement et sans reproche. Demander la sagesse, ce n’est pas chercher des astuces, c’est accueillir le regard de Dieu sur la situation.
+
+Il répond volontiers à celui qui demande avec foi.
+
+Présente-Lui ta question précise ; attends Sa direction.`
+      },
+      {
+        id:'2corinthiens-12-9',
+        date:'2025-09-10',
+        title:'La grâce qui suffit',
+        verse:'2 Corinthiens 12:9',
+        img: 'images/devotion/img10.jpeg',
+        body: `La puissance de Christ se déploie dans la faiblesse. Nos limites ne sont pas une fin : elles deviennent l’espace de la grâce.
+
+Accepte de dépendre : la force de Dieu se voit mieux sur des vies disponibles que sur des vies parfaites.
+
+Aujourd’hui, dis simplement : « Ta grâce me suffit. »`
+      }
+    ];
+
+    function renderDevotions(){
+      const wrap = document.getElementById('devotions');
+      wrap.innerHTML = '';
+      DEVOTIONS.forEach(d => {
+        const a = document.createElement('a'); a.href = `#/devotion/${d.id}`; a.className = 'card';
+        a.style.padding = '1rem';
+        a.innerHTML = `<img alt="${d.title}" src="${d.img}" style="width:100%;height:160px;object-fit:cover;border-radius:12px">
+                       <div class="muted">${new Date(d.date).toLocaleDateString('fr-FR')}</div>
+                       <h3 style="margin:.2rem 0">${d.title}</h3>
+                       <div class="muted">${d.verse}</div>`;
+        wrap.appendChild(a);
+      });
+    }
+
+    function renderDevotionDetail(id){
+      const d = DEVOTIONS.find(x=>x.id===id) || DEVOTIONS[0];
+      const box = document.getElementById('devotionBox');
+      const liked = localStorage.getItem(getLikeKey(d.id)) === '1';
+      const comments = JSON.parse(localStorage.getItem(getCommentsKey(d.id))||'[]');
+
+      const commentary = `
+        <div class="card" style="padding:1rem;margin-top:1rem">
+          <p><em>Commentaire</em></p>
+          <p>${d.body.replace(/\n/g,'</p><p>')}</p>
+        </div>`;
+
+      box.innerHTML = `
+        <div style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start">
+          <img src="${d.img}" alt="${d.title}" style="width:100%;height:220px;object-fit:cover;border-radius:12px">
+          <div>
+            <div class="muted">${new Date(d.date).toLocaleDateString('fr-FR')} • ${d.verse}</div>
+            <h3 style="margin:.2rem 0 0">${d.title}</h3>
+            ${commentary}
+            <div class="actions">
+              <button id="likeBtn" class="iconbtn" aria-pressed="${liked}" title="J'aime">❤️</button>
+              <button id="commentBtn" class="iconbtn" title="Laisser un mot">💬</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1rem">
+          <h4>Commentaires (${comments.length})</h4>
+          <form id="commentForm" style="display:grid;gap:.6rem;margin:.6rem 0">
+            <input name="name" placeholder="Votre nom" required style="padding:.7rem 1rem;border:1px solid #d9e7ff;border-radius:12px">
+            <textarea name="text" rows="3" placeholder="Votre commentaire" required style="padding:.7rem 1rem;border:1px solid #d9e7ff;border-radius:12px"></textarea>
+            <button class="btn primary" type="submit">Publier</button>
+          </form>
+          <div id="commentsList"></div>
+        </div>`;
+
+      // Like
+      const likeBtn = box.querySelector('#likeBtn');
+      likeBtn.addEventListener('click', ()=>{
+        const now = localStorage.getItem(getLikeKey(d.id)) === '1';
+        localStorage.setItem(getLikeKey(d.id), now ? '0' : '1');
+        renderDevotionDetail(d.id);
+      });
+
+      // Aller au formulaire de commentaire
+      const commentBtn = box.querySelector('#commentBtn');
+      const commentForm = box.querySelector('#commentForm');
+      commentBtn.addEventListener('click', ()=>{
+        commentForm.scrollIntoView({behavior:'smooth', block:'start'});
+        commentForm.querySelector('input[name="name"]').focus();
+      });
+
+      // Liste des commentaires
+      const list = box.querySelector('#commentsList');
+      comments.forEach(c=>{
+        const item = document.createElement('div'); item.className='card'; item.style.padding='1rem'; item.style.marginTop='.6rem';
+        item.innerHTML = `<strong>${c.name}</strong><div class="muted" style="font-size:.9rem">${new Date(c.at).toLocaleString('fr-FR')}</div><p style="margin:.3rem 0 0">${c.text}</p>`;
+        list.appendChild(item);
+      });
+
+      // Envoi du commentaire
+      const cform = box.querySelector('#commentForm');
+      cform.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(cform).entries());
+        const arr = JSON.parse(localStorage.getItem(getCommentsKey(d.id))||'[]');
+        arr.unshift({name:data.name, text:data.text, at:Date.now()});
+        localStorage.setItem(getCommentsKey(d.id), JSON.stringify(arr));
+        renderDevotionDetail(d.id);
+      });
+    }
+
+    // boot
+    renderDevotions();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Helpers (placés en bas comme demandé)
+    function getLikeKey(id){ return `like_${id}`; }
+    function getCommentsKey(id){ return `comments_${id}`; }
+  </script>
+</body>
+</html>
